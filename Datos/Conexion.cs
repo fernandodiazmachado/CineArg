@@ -21,7 +21,7 @@ namespace Datos
         public Conexion()
         {
             connect = new MySqlConnection();
-            connection = "SERVER=localhost; DATABASE=cinearg; UID=root; PASSWORD=1234";
+            connection = "server=127.0.0.1; port=3306; database=cinearg; user id=root; password=12345";
         }
 
         private MySqlConnection ConnectToBBDD()
