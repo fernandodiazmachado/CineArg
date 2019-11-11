@@ -11,9 +11,9 @@ using Negocio;
 
 namespace Presentacion
 {
-    public partial class Form1 : Form
+    public partial class AltaPelicula : Form
     {
-        public Form1()
+        public AltaPelicula()
         {
             InitializeComponent();
         }
