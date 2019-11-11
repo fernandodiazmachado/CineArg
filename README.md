@@ -1,12 +1,12 @@
 # CineArg
 
-Datos:
-  **Conexion**
-  **Datos Peliculas**
+**Datos:**
+  Conexion /
+  Datos Peliculas
 
-Negocios:
+**Negocios:**
   
   Pelicula
 
-Presentacion:
+**Presentacion:**
   AltaPelicula / otra
