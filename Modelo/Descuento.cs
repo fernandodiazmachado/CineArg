@@ -4,28 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Data;
 
 namespace Negocio
 {
     public class Descuento
     {
-        public int IdDescentos { get; }
+        public int IdDescuentos { get; set; }
         public string Detalle { get; set; }
         public int Porcentaje { get; set; }
 
-        public static string ConsultarTabla()
+        public static DataTable Consultar()
         {
-            bool ok = DatosDescuento.ConsultarTabla();
+            DataTable dt = new DataTable();
+            dt = DatosDescuento.ConsultarTabla();
 
-            if (ok)
-                return "conexion con tabla descuento exitosa";
-            else
-                return "fallo la conexion con tabla descuento";
+            return dt;
+        }
+
+        public static int ConsultarPorcentaePorId(int id)
+        {
+            int descuento;
+            descuento = DatosDescuento.ConsultarPorcentajePorId(id);
+            return descuento;
         }
 
         public static string Modificar(Descuento descuento)
         {
-            bool ok = DatosDescuento.Modificar(descuento.IdDescentos, descuento.Detalle, descuento.Porcentaje);
+            bool ok = DatosDescuento.Modificar(descuento.IdDescuentos, descuento.Porcentaje);
 
             if (ok)
                 return "Se ha modificado el porcentaje " + descuento.Detalle;

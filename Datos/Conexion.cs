@@ -69,6 +69,48 @@ namespace Datos
             return cadena;
         }
 
+        public double TraerDouble(string query)
+        {
+            double valor = 0;
+            try
+            {
+                ConnectToBBDD();
+                command = new MySqlCommand(query, connect);
+                valor =  Convert.ToDouble(command.ExecuteScalar().ToString());
+            }
+            catch
+            {
+                valor = 0;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return valor;
+        }
+
+        public int TraerInt(string query)
+        {
+            int valor = 0;
+            try
+            {
+                ConnectToBBDD();
+                command = new MySqlCommand(query, connect);
+                valor = Convert.ToInt32(command.ExecuteScalar().ToString());
+            }
+            catch
+            {
+                valor = 0;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return valor;
+        }
+
         public bool ExecuteComand(string query)
         {
             bool exito;

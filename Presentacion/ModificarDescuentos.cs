@@ -16,34 +16,40 @@ namespace Presentacion
         public ModificarDescuentos()
         {
             InitializeComponent();
-            Descuento descuento = new Descuento();
-            String mensaje = Descuento.ConsultarTabla();
-            MessageBox.Show(mensaje);
         }
 
         private void ModificarDescuentos_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            CargarComboTipoDescuento();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void comboBoxTipoDescuento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            Descuento descuento = new Descuento();
+            descuento.IdDescuentos = Convert.ToInt32(cboTipoDescuento.SelectedValue);
+            descuento.Porcentaje = Convert.ToInt32(txtDescuento.Text);
+            Descuento.Modificar(descuento);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CargarComboTipoDescuento()
+        {
+            DataTable dt = new DataTable();
+            dt = Descuento.Consultar();
+
+            cboTipoDescuento.DisplayMember = "detalle";
+            cboTipoDescuento.ValueMember = "idDescuentos";
+            cboTipoDescuento.DataSource = dt;
+        }
+
+        private void cboTipoDescuento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idDescuento = Convert.ToInt32(cboTipoDescuento.SelectedValue);
+            txtDescuento.Text = Descuento.ConsultarPorcentaePorId(idDescuento).ToString();
         }
     }
 }
