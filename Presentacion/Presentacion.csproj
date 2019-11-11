@@ -52,10 +52,28 @@
     <Compile Include="AltaPelicula.Designer.cs">
       <DependentUpon>AltaPelicula.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPrincipal.Designer.cs">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarDescuentos.Designer.cs">
+      <DependentUpon>ModificarDescuentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AltaPelicula.resx">
       <DependentUpon>AltaPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarDescuentos.resx">
+      <DependentUpon>ModificarDescuentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
