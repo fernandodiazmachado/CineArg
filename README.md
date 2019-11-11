@@ -5,8 +5,7 @@
   Datos Peliculas
 
 **Negocios:**
-  
   Pelicula
 
 **Presentacion:**
-  AltaPelicula / otra
+  AltaPelicula /
