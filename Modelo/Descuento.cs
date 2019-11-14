@@ -39,6 +39,13 @@ namespace Negocio
                 return "No se ha podido modificar el porcentaje " + descuento.Detalle;
         }
 
+        public static int ObtenerDescuentoMaximo(int descuentoMaximo)
+        {
+            int descMaximo = 0;
+            descMaximo = DatosDescuento.ObtenerDescuentoMaximo(descuentoMaximo);
+            return descMaximo;
+        }
+
 
     }
 }

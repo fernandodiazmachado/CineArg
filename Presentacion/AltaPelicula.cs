@@ -50,13 +50,13 @@ namespace Presentacion
             if (txtNombre.Text.Trim() == "")
             {
                 MessageBox.Show("El nombre de la pelicula no puede estar vacio.");
-                ok = false;
+                return false;
             }
 
-            if (dtpDesde.Value > dtpHasta.Value)
+            if (dtpDesde.Value.Date > dtpHasta.Value.Date)
             {
                 MessageBox.Show("La fecha desde no puede ser mayor a la fecha hasta.");
-                ok = false;
+                return false;
             }
 
             return ok;
