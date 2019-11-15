@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Datos
 {
     public class DatosPelicula
     {
+        public static DataTable ConsultarTabla()
+        {
+            Conexion con = new Conexion();
+            string query = "SELECT * FROM cinearg.peliculas;";
+            return con.SelectDataTable(query);
+        }
         public static bool Agregar(string nombre, DateTime desde, DateTime hasta, string estreno)
         {
             Conexion con = new Conexion();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Data;
 
 namespace Negocio
 {
@@ -22,6 +23,14 @@ namespace Negocio
                 return "Se ha dado de alta la pelicula " + pelicula.Nombre;
             else
                 return "No se ha podido dar de alta la pelicula " + pelicula.Nombre;
+        }
+
+        public static DataTable Consultar()
+        {
+            DataTable dt = new DataTable();
+            dt = DatosPelicula.ConsultarTabla();
+
+            return dt;
         }
     }
 }
