@@ -33,5 +33,11 @@ namespace Presentacion
             Form descuento = new ModificarDescuentos();
             descuento.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form funcion = new AltaFuncion();
+            funcion.Show();
+        }
     }
 }

@@ -36,6 +36,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.chkEstreno = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +68,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(183, 143);
+            this.btnSalir.Location = new System.Drawing.Point(199, 180);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(276, 143);
+            this.btnGrabar.Location = new System.Drawing.Point(292, 180);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 23);
             this.btnGrabar.TabIndex = 4;
@@ -109,11 +110,22 @@
             this.dtpHasta.Size = new System.Drawing.Size(99, 20);
             this.dtpHasta.TabIndex = 7;
             // 
-            // Form1
+            // chkEstreno
+            // 
+            this.chkEstreno.AutoSize = true;
+            this.chkEstreno.Location = new System.Drawing.Point(33, 136);
+            this.chkEstreno.Name = "chkEstreno";
+            this.chkEstreno.Size = new System.Drawing.Size(62, 17);
+            this.chkEstreno.TabIndex = 8;
+            this.chkEstreno.Text = "Estreno";
+            this.chkEstreno.UseVisualStyleBackColor = true;
+            // 
+            // AltaPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 209);
+            this.ClientSize = new System.Drawing.Size(429, 247);
+            this.Controls.Add(this.chkEstreno);
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.txtNombre);
@@ -122,7 +134,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "AltaPelicula";
             this.Text = "Alta de Pelicula";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -140,6 +152,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.CheckBox chkEstreno;
     }
 }
 

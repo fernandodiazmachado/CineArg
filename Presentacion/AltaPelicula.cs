@@ -26,6 +26,7 @@ namespace Presentacion
                 pelicula.Nombre = txtNombre.Text;
                 pelicula.TiempoDesde = dtpDesde.Value;
                 pelicula.TiempoHasta = dtpHasta.Value;
+                pelicula.Estreno = chkEstreno.Checked ? "S" : "N";
 
                 string mensaje = Pelicula.Agregar(pelicula);
                 MessageBox.Show(mensaje);

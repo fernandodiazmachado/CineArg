@@ -10,6 +10,11 @@ namespace Negocio
 {
     public class Descuento
     {
+        public enum Detalles
+        {
+            Estreno = 1, Semana, FinDeSemana, DosD, DosDUltimas10, TresD, TresDPrimeras10
+        }
+
         public int IdDescuentos { get; set; }
         public string Detalle { get; set; }
         public int Porcentaje { get; set; }
@@ -46,6 +51,7 @@ namespace Negocio
             return descMaximo;
         }
 
+        
 
     }
 }

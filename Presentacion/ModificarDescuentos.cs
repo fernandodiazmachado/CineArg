@@ -65,26 +65,67 @@ namespace Presentacion
 
         private bool ValidarDescuento(int id)
         {
-            int descAcual = Descuento.ConsultarPorcentaePorId(id);
-            int descValidar;
+            int descActual = Descuento.ConsultarPorcentaePorId(id);
+            //int descValidar;
             bool guardar = true;
 
-            if (id == 1) 
+            if (id == (int)Descuento.Detalles.Estreno) 
             {
-                descValidar = descuentoMax1 - descAcual + Convert.ToInt32(txtDescuento.Text);
-                if (descValidar > 99)
-                    return MostrarConfirmacion(); 
-
-                descValidar = descuentoMax2 - descAcual + Convert.ToInt32(txtDescuento.Text);
-                if (descValidar > 99)
+                if (descuentoValidar(descActual, descuentoMax1) > 99)
                     return MostrarConfirmacion();
-
-                descValidar = descuentoMax3 - descAcual + Convert.ToInt32(txtDescuento.Text);
-                if (descValidar > 99)
+                if (descuentoValidar(descActual, descuentoMax2) > 99)
                     return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax3) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax4) > 99)
+                    return MostrarConfirmacion();
+             }
 
-                descValidar = descuentoMax4 - descAcual + Convert.ToInt32(txtDescuento.Text);
-                if (descValidar > 99)
+             if (id == (int)Descuento.Detalles.Semana)
+             {
+                if (descuentoValidar(descActual, descuentoMax3) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax4) > 99)
+                    return MostrarConfirmacion();
+            }
+
+             if (id == (int)Descuento.Detalles.FinDeSemana)
+             {
+                if (descuentoValidar(descActual, descuentoMax1) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax2) > 99)
+                    return MostrarConfirmacion();
+             }
+
+            if (id == (int)Descuento.Detalles.DosD)
+            {
+                if (descuentoValidar(descActual, descuentoMax1) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax3) > 99)
+                    return MostrarConfirmacion();
+            }
+
+            if (id == (int)Descuento.Detalles.DosDUltimas10)
+            {
+                if (descuentoValidar(descActual, descuentoMax1) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax3) > 99)
+                    return MostrarConfirmacion();
+            }
+
+            if (id == (int)Descuento.Detalles.TresD)
+            {
+                if (descuentoValidar(descActual, descuentoMax2) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax4) > 99)
+                    return MostrarConfirmacion();
+            }
+
+            if (id == (int)Descuento.Detalles.TresDPrimeras10)
+            {
+                if (descuentoValidar(descActual, descuentoMax2) > 99)
+                    return MostrarConfirmacion();
+                if (descuentoValidar(descActual, descuentoMax4) > 99)
                     return MostrarConfirmacion();
             }
 
@@ -92,6 +133,12 @@ namespace Presentacion
 
         }
 
+        private int descuentoValidar(int descActual, int descuentoMaxX)
+        {
+            int descValidar;
+            descValidar = descuentoMax1 - descActual + Convert.ToInt32(txtDescuento.Text);
+            return descValidar;
+        }
         private bool MostrarConfirmacion()
         {
             bool guardar = true;

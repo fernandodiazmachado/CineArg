@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaFuncion.Designer.cs">
+      <DependentUpon>AltaFuncion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AltaPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AltaFuncion.resx">
+      <DependentUpon>AltaFuncion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaPelicula.resx">
       <DependentUpon>AltaPelicula.cs</DependentUpon>
     </EmbeddedResource>

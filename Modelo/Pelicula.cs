@@ -12,10 +12,11 @@ namespace Negocio
         public string Nombre { get; set; }
         public DateTime TiempoDesde { get; set; }
         public DateTime TiempoHasta { get; set; }
+        public string Estreno { get; set; }
 
         public static string Agregar(Pelicula pelicula)
         {
-            bool ok = DatosPelicula.Agregar(pelicula.Nombre, pelicula.TiempoDesde, pelicula.TiempoHasta);
+            bool ok = DatosPelicula.Agregar(pelicula.Nombre, pelicula.TiempoDesde, pelicula.TiempoHasta, pelicula.Estreno);
 
             if (ok)
                 return "Se ha dado de alta la pelicula " + pelicula.Nombre;

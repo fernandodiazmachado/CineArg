@@ -32,16 +32,16 @@ namespace Datos
             switch (descuentoMaximo)
             {
                case 1:
-                    descuentos = "1,3,4,5";
+                    descuentos = "1,3,4,5"; //Estreno - FIN DE SEMANA - 2D - 2D ULTIMAS 10
                     break;
                 case 2:
-                    descuentos = "1,3,6,7";
+                    descuentos = "1,3,6,7"; //ESTRENO - FIN DE SEMANA - 3D - 3D PRIMERAS 10
                     break;
                 case 3:
-                    descuentos = "1,2,4,5";
+                    descuentos = "1,2,4,5"; //ESTRENO - SEMANA - 2D - 2D ULTIMAS 10
                     break;
                 case 4:
-                    descuentos = "1,2,6,7";
+                    descuentos = "1,2,6,7"; //ESTRENO - SEMANA - 3D - 3D PRIMERAS 10
                     break;
             }
 
