@@ -20,18 +20,15 @@ namespace Presentacion
         private void AltaFuncion_Load(object sender, EventArgs e)
         {
             CargarComboPelicula();
+            CargarComboSala();
+            CargarComboIdioma();
         }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void CargarComboPelicula()
+            private void CargarComboPelicula()
         {
             DataTable dt = new DataTable();
             dt = Pelicula.Consultar();
@@ -41,12 +38,62 @@ namespace Presentacion
             cboPelicula.DataSource = dt;
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void CargarComboSala()
+        {
+            DataTable dt = new DataTable();
+            dt = Sala.Consultar();
+
+            cboSala.DisplayMember = "descripcion";
+            cboSala.ValueMember = "idSalas";
+            cboSala.DataSource = dt;
+        }
+
+        private void CargarComboIdioma()
+        {
+            DataTable dt = new DataTable();
+            dt = Idioma.Consultar();
+
+            cboIdioma.DisplayMember = "descripcion";
+            cboIdioma.ValueMember = "idIdioma";
+            cboIdioma.DataSource = dt;
+        }
+
+        private void cboPelicula_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void cboPelicula_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            Funcion funcion = new Funcion();
+            funcion.IdPelicula = Convert.ToInt32(cboPelicula.SelectedValue);
+            funcion.IdSala = Convert.ToInt32(cboSala.SelectedValue);
+            funcion.IdIdioma = Convert.ToInt32(cboIdioma.SelectedValue);
+            funcion.FechaProy = fechaYHora();
+
+            string mensaje = Funcion.Agregar(funcion);
+            MessageBox.Show(mensaje); 
+        }
+
+        private DateTime fechaYHora()
+        {
+            DateTime fecha = Convert.ToDateTime(dtpFecha.Value.Date);
+            DateTime hora = Convert.ToDateTime(dtpHora.Value);
+            DateTime fechaConvertida = fecha.AddHours(hora.Hour).AddMinutes(hora.Minute).AddSeconds(hora.Second);
+            return fechaConvertida;
+        }
+
+        private void cboIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public bool ShowUpDown { get; set; }
+        private void dtpHora_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
 
         }

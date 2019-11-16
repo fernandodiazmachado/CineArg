@@ -8,12 +8,15 @@ using System.Data;
 
 namespace Negocio
 {
-    public class Sala
+    public class Idioma
     {
+        public int IdIdioma { get; set; }
+        public string Descripcion { get; set; }
+
         public static DataTable Consultar()
         {
             DataTable dt = new DataTable();
-            dt = DatosSala.ConsultarTabla();
+            dt = DatosIdioma.ConsultarTabla();
 
             return dt;
         }

@@ -136,13 +136,13 @@ namespace Presentacion
         private int descuentoValidar(int descActual, int descuentoMaxX)
         {
             int descValidar;
-            descValidar = descuentoMax1 - descActual + Convert.ToInt32(txtDescuento.Text);
+            descValidar = descuentoMaxX - descActual + Convert.ToInt32(txtDescuento.Text);
             return descValidar;
         }
         private bool MostrarConfirmacion()
         {
             bool guardar = true;
-                DialogResult dialogResult = MessageBox.Show("Confirmar", "La suma de descuentos supera el 100%. Desea continuar?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show( "La suma de descuentos supera el 100%. Desea continuar?", "Confirmar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     guardar = true;

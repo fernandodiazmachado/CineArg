@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="DatosDescuento.cs" />
+    <Compile Include="DatosFuncion.cs" />
+    <Compile Include="DatosIdioma.cs" />
     <Compile Include="DatosPelicula.cs" />
     <Compile Include="DatosSala.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
