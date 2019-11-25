@@ -17,5 +17,17 @@ namespace Negocio
 
             return dt;
         }
+
+    }
+
+    public class TipoSala
+    {
+        public static DataTable Consultar()
+        {
+            DataTable dt = new DataTable();
+            dt = DatosTipoSala.ConsultarTipoSala();
+
+            return dt;
+        }
     }
 }

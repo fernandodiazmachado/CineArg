@@ -32,5 +32,28 @@ namespace Negocio
 
             return dt;
         }
+
+        public static DataTable CargarComboPelicula()
+        {
+            DataTable dt = new DataTable();
+            dt = DatosPelicula.CargarComboPelicula();
+
+            return dt;
+        }
+
+        public static DateTime ConsultarFechaHasta(int idPelicula)
+        {
+            DateTime fecha = new DateTime();
+            fecha = DatosPelicula.ConsultarFechaHasta(idPelicula);
+
+            return fecha;
+        }
+        public static DateTime ConsultarFechaDesde(int idPelicula)
+        {
+            DateTime fecha = new DateTime();
+            fecha = DatosPelicula.ConsultarFechaDesde(idPelicula);
+
+            return fecha;
+        }
     }
 }

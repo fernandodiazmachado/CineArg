@@ -71,8 +71,16 @@ namespace Presentacion
             funcion.IdIdioma = Convert.ToInt32(cboIdioma.SelectedValue);
             funcion.FechaProy = fechaYHora();
 
-            string mensaje = Funcion.Agregar(funcion);
-            MessageBox.Show(mensaje); 
+            if (funcion.FechaProy < Pelicula.ConsultarFechaHasta(funcion.IdPelicula)&& funcion.FechaProy >= Pelicula.ConsultarFechaDesde(funcion.IdPelicula))
+            {
+                string mensaje = Funcion.Agregar(funcion);
+                MessageBox.Show(mensaje);
+            }
+            else
+            {
+                MessageBox.Show("Fecha de funcion fuera del rango aceptado.");
+            }
+            
         }
 
         private DateTime fechaYHora()

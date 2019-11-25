@@ -17,6 +17,7 @@ namespace Datos
         private MySqlDataAdapter da;
         private DataTable dt;
         private DataSet ds;
+        private DataRow dr;
 
         public Conexion()
         {
@@ -153,6 +154,8 @@ namespace Datos
 
             return dt;
         }
+
+        
 
         public DataSet SelectDataSet(string query, string table)
         {

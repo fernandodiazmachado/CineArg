@@ -13,7 +13,8 @@ namespace Negocio
         public int IdPelicula{ get; set; }
         public int IdSala { get; set; }
         public int IdIdioma { get; set; }
-        public DateTime FechaProy { get; set; }
+        public DateTime? FechaProy { get; set; }
+        public int IdTipoSala { get; set; }
 
         public static string Agregar(Funcion funcion)
         {
@@ -23,6 +24,11 @@ namespace Negocio
                 return "Se ha dado de alta la funcion";
             else
                 return "No se ha podido dar de alta la funcion";
+        }
+
+        public static DataTable Consultar(Funcion funcion)
+        {
+            return DatosFuncion.Consultar(funcion.IdPelicula, funcion.IdTipoSala, funcion.FechaProy);
         }
     }
 }

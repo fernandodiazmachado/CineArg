@@ -39,5 +39,16 @@ namespace Presentacion
             Form funcion = new AltaFuncion();
             funcion.Show();
         }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            Form funcion = new SeleccionarFuncion();
+            funcion.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
