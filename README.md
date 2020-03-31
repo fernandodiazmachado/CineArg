@@ -1,11 +1,3 @@
 # CineArg
 
-**Datos:**
-  Conexion /
-  Datos Peliculas
-
-**Negocios:**
-  Pelicula
-
-**Presentacion:**
-  AltaPelicula /
+Repositorio para la materia Ingenieria de software
